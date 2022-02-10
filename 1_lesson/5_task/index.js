@@ -1,23 +1,23 @@
-const slash = "\u2B1C";
-const space = "\u2B1B";
+const white = "\u2B1C";
+const black = "\u2B1B";
 let result = "";
 let currentRow = "";
 let lastCant = "";
  // строки
 for (let i = 0; i < 8; i++) {
   if(i % 2 === 0){
-    lastCant = space; 
+    lastCant = black; 
   } else {
-    lastCant = slash; 
+    lastCant = white; 
   }
   // колонки и формируем полную строку
   for (let j = 0; j < 8; j++) { 
-    if(lastCant === slash){
-       currentRow += space;
-       lastCant = space;
+    if(lastCant === white){
+       currentRow += black;
+       lastCant = black;
     } else {
-      currentRow += slash;
-      lastCant = slash;
+      currentRow += white;
+      lastCant = white;
     }
   }
   result = `${result}${currentRow}\n`;
